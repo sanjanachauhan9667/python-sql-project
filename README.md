@@ -4,9 +4,9 @@
 
 This project contains 3 console-based systems built using Python and MySQL:
 
-* Student Management System
 * Library Management System
 * Online Shopping Cart
+* Student Management System
 
 ## Features
 
@@ -16,7 +16,7 @@ Library Management System
 * Issue and return books
 * Manage book status
 
-Shopping Cart System
+Online Shopping Cart 
 * Show products
 * Add items to cart
 * View cart items
