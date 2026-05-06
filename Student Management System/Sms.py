@@ -2,14 +2,18 @@ import mysql.connector as myconn
 
 mydb = myconn.connect(
     host = 'localhost',
-    username = 'root',
-    password = 'your_password',
+    user = 'root',
+    password = 'Rocky4145',
     database = 'student_db',
-    auth_plugin = 'mysql_native_password')
+    auth_plugin = 'mysql_native_password'
+    )
 
 # DATABASE CREATED!----------------------------------------------
 db_cursor = mydb.cursor()
 db_cursor.execute('CREATE DATABASE IF NOT EXISTS student_db')
+
+# USE DATABASE! ---------------------------
+db_cursor.execute("USE student_db")
 
 # TABLE CREATED!-------------------------------------------------
 db_cursor.execute("""
@@ -61,6 +65,11 @@ def delete_students():
     mydb.commit()
     print('Student Deleted Successfully')
 
+# RESET_TABLE!------------------------------------------------------
+def reset_table():
+    db_cursor.execute("TRUNCATE TABLE students")
+    print('Table Reset Successfully')
+
 
 # MENU!--------------------------------------------------------------
 while True:
@@ -69,7 +78,8 @@ while True:
     print("2. VIEW STUDENT")
     print("3. UPDATE STUDENT")
     print("4. DELETE STUDENT")
-    print("5. EXIT STUDENT")
+    print("5. RESET TABLE")
+    print("6. EXIT STUDENT")
 
     choice = input('Enter Your Choice:')
 
@@ -82,6 +92,8 @@ while True:
     elif choice == '4':
         delete_students()
     elif choice == '5':
+        reset_table()
+    elif choice == '6':
         print(' EXITING......')
         break
     else:
