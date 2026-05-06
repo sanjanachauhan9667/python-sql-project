@@ -3,7 +3,7 @@ import mysql.connector as myconn
 mydb = myconn.connect(
     host = 'localhost',
     user = 'root',
-    password = 'Rocky4145',
+    password = 'your_password',
     database = 'student_db',
     auth_plugin = 'mysql_native_password'
     )

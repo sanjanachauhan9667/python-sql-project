@@ -3,13 +3,14 @@ import mysql.connector as myconn
 mydb = myconn.connect(
     host = 'localhost',
     user = 'root',
-    password = 'Rocky4145',
+    password = 'your_password',
     database = 'Library_db',
     auth_plugin = 'mysql_native_password')
 
 # DATABASE CREATED!----------------------------------------------
 db_cursor = mydb.cursor()
 db_cursor.execute('CREATE DATABASE IF NOT EXISTS Library_db')
+db_cursor.execute('USE Library_db ')
 
 # TABLE CREATED! ------------------------------------------------
 db_cursor.execute("""

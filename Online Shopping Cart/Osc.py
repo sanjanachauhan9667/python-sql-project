@@ -3,7 +3,7 @@ import mysql.connector as myconn
 mydb = myconn.connect(
     host = 'localhost',
     user = 'root',
-    password = 'Rocky4145',
+    password = 'your_password',
     database = 'Shopkit',
     # auth_plugin = 'mysql_native_password'
 )
@@ -11,6 +11,7 @@ mydb = myconn.connect(
 # DATABASE CREATED!-------------------------------------------------
 db_cursor = mydb.cursor()
 db_cursor.execute("CREATE DATABASE IF NOT EXISTS Shopkit")
+db_cursor.execute("USE Shopkit")
 
 ## TABLE CREATED!----------------------------------------------------
 db_cursor.execute("""
